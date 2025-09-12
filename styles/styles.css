@@ -10,7 +10,7 @@ nav a{
 h1{
     color:darkblue;
 }
-img {
+main img {
   width: 150px;
   height: auto;
   border: 1px solid black;
@@ -18,5 +18,26 @@ img {
   box-shadow: 0 0 30px gray;
 }
 p {
-  padding: 10px;
+  padding: 0px;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+aside {
+  width: 280px;
+  margin: 20px;
+  border: 1px solid #444;
+  padding: 16px;
+  background-color: #ffffff; /* white background */
+  color: #1a1a1a; /* very dark gray text */
+}
+aside img {
+  width: 200px;
+  height: auto;
+}
+footer {
+  margin-top: 15px;
+  border-top: 2px solid #000;
+  text-align: center;
 }
