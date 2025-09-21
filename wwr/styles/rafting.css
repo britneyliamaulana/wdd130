@@ -1,0 +1,96 @@
+
+:root {
+  --primary-color: #006d77;     /* Deep teal - for headers/nav */
+  --secondary-color: #83c5be;   /* Soft teal - for buttons/accents */
+  --accent1-color: #264653;     /* Dark blue-gray - for text/background overlay */
+  --accent2-color: #ffffff;     /* White - for contrast text */
+  --heading-font: "Georgia", "Times New Roman", serif;
+  --body-font: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🔄 2. Box Model Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 📝 3. Body Styles */
+body {
+  font-family: var(--body-font);
+  color: var(--accent1-color);
+  background-color: var(--accent2-color); /* Optional: light background */
+}
+
+/* 📐 4. Page Layout (Centered, Limited Width) */
+header, main, footer {
+  width: 840px;
+  margin: 0 auto;
+}
+
+/* 🔠 5. Headings */
+h1, h2 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+/* 📦 6. Structural Elements Spacing */
+nav, p, section, article {
+  margin: 16px;
+  padding: 8px;
+}
+
+/* 🔗 7. Remove Underline from Social Media Image Links */
+.socialmedia a {
+  text-decoration: none;
+}
+
+/* 🌄 8. Hero Section */
+.hero {
+  position: relative;
+  margin-top: 20px;
+}
+
+/* 👀 9. Hero Image Styling */
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 🏷️ 10. Hero H1 Overlay */
+.hero h1 {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  opacity: 0.8;
+  background-color: var(--accent1-color);
+  color: var(--accent2-color); /* White text */
+  font-size: 2rem;
+  z-index: 2;
+}
+
+/* 📰 11. Hero Article Overlay */
+.hero article {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  width: 420px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light transparent background */
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* 🖼️ 12. Specific Styling for Image Inside Hero Article */
+.hero article img {
+  float: right;
+  width: 125px;
+  margin: 0 0 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
