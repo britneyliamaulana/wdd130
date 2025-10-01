@@ -1,9 +1,10 @@
-
 :root {
-  --primary-color: #006d77;     /* Deep teal - for headers/nav */
-  --secondary-color: #83c5be;   /* Soft teal - for buttons/accents */
-  --accent1-color: #264653;     /* Dark blue-gray - for text/background overlay */
-  --accent2-color: #ffffff;     /* White - for contrast text */
+  --primary-color: #006d77;
+  --secondary-color: #83c5be;
+  --accent1-color: #264653;
+  --accent2-color: #ffffff;
+  --footer-bg: #e3d4f0;
+
   --heading-font: "Georgia", "Times New Roman", serif;
   --body-font: "Segoe UI", Arial, sans-serif;
 }
@@ -14,84 +15,62 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: var(--body-font);
   color: var(--accent1-color);
-  background-color: var(--accent2-color); 
+  background-color: var(--accent2-color);
 }
 
-
-header, main, footer {
+header,
+main,
+footer {
   width: 840px;
   margin: 0 auto;
 }
 
-
-h1, h2 {
+/* Typography */
+h1,
+h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
 }
 
+/* === Header & Nav === */
 header {
   display: grid;
-  grid-template-columns: auto 1fr;  /* two columns: logo’s width, then nav takes the rest */
-  align-items: center;              /* vertically center logo and nav */
-  column-gap: 24px;                 /* spacing between logo and nav */
-  padding: 16px;                    /* optional padding */
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 24px;
+  padding: 16px;
 }
 
 .main-nav {
-  justify-self: end;  /* push nav to the right side */
+  justify-self: end;
 }
 
 .main-nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex; 
+  display: flex;
   gap: 16px;
 }
 
 .main-nav a {
   text-decoration: none;
   color: var(--accent1-color);
+  padding: 8px 12px;
+  display: block;
 }
 
-.main-nav .nav-list {
-  display: flex;             /* turn the ul into a flex container */
-  list-style: none;          /* remove bullet points */
-  margin: 0;
-  padding: 0;
-  gap: 24px;                  /* optional: space between nav items */
-  align-items: center;       /* vertically center the items */
-  /* justify-content: flex-end;  you can also push them to the right */
-}
-
-.main-nav .nav-list a {
-  text-decoration: none;
-  color: var(--accent1-color);
-  padding: 8px 12px;         /* clickable area padding */
-  display: block;             /* make the <a> fill its li area */
-}
-
-/* If you want the entire nav list to be pushed to the right side of the header grid cell: */
-.main-nav {
-  justify-self: end;          /* (if parent is a grid cell) */
-}
-
-
-nav, p, section, article {
+/* General Spacing */
+nav,
+p,
+section,
+article {
   margin: 16px;
   padding: 8px;
 }
 
-
-.socialmedia a {
-  text-decoration: none;
-}
-
-
+/* === Hero Section === */
 .hero {
   position: relative;
   margin-top: 20px;
@@ -102,12 +81,6 @@ nav, p, section, article {
   width: 100%;
   height: auto;
 }
-.hero article::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 
 .hero h1 {
   position: absolute;
@@ -117,10 +90,11 @@ nav, p, section, article {
   text-align: center;
   opacity: 0.8;
   background-color: var(--accent1-color);
-  color: var(--accent2-color); /* White text */
+  color: var(--accent2-color);
   font-size: 2rem;
   z-index: 2;
 }
+
 .hero article {
   position: absolute;
   top: 110px;
@@ -142,15 +116,14 @@ nav, p, section, article {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-
+/* === History Section === */
 .history {
-  width: 840px;
   margin: 40px auto;
 }
 
 .history-content {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* image left, text right */
+  grid-template-columns: 1fr 2fr;
   gap: 24px;
   align-items: start;
 }
@@ -159,7 +132,7 @@ nav, p, section, article {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .history-text p {
@@ -167,17 +140,14 @@ nav, p, section, article {
   line-height: 1.6;
 }
 
-/* Responsive stack for small screens */
 @media (max-width: 700px) {
   .history-content {
     grid-template-columns: 1fr;
   }
 }
 
-/* Adventures Section Layout */
-
+/* === Adventures Section === */
 .adventures {
-  width: 840px;
   margin: 60px auto;
 }
 
@@ -218,7 +188,6 @@ nav, p, section, article {
   text-align: center;
 }
 
-/* Responsive fallback */
 @media (max-width: 900px) {
   .adventure-list {
     grid-template-columns: repeat(2, 1fr);
@@ -231,33 +200,184 @@ nav, p, section, article {
   }
 }
 
+/* === Contact Page Styles === */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1 1 45%;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-form button {
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.contact-form button:hover {
+  background-color: #004f56;
+}
+
+/* Map styling */
+.map iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  margin-top: 1rem;
+}
+
+/* === Employee Profiles === */
+.employee-profiles {
+  background-color: #f3f3f3;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.employee-profiles h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-grid figure {
+  width: 150px;
+  text-align: center;
+}
+
+.profile-grid img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* === Footer === */
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    background-color: var(--primary-color);
-    color: var(--accent2-color);
+  background-color: var(--footer-bg);
+  padding: 1rem;
+  text-align: center;
+  color: var(--accent1-color);
 }
 
 footer p {
-    margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 nav.socialmedia {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 0.5rem;
 }
 
 nav.socialmedia a {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    text-align: center;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
 }
 
 nav.socialmedia img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Header Wrapper */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e3d4f0;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+
+/* Logo */
+.page-header img {
+  width: 100px;
+  height: auto;
+}
+
+/* Navigation */
+.main-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav .nav-list li a {
+  text-decoration: none;
+  background-color: #fff;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav .nav-list li a:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+  .page-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
 }
