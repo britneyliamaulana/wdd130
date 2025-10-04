@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8" />
@@ -23,11 +23,11 @@
             </ul>
         </nav>
     </header>
+
     <!-- Main Content -->
     <main>
         <h1>Contact Us</h1>
 
-        <!-- Contact Info and Form Side-by-Side -->
         <section class="contact-wrapper">
             <div class="contact-info">
                 <h2>White Water Rafting Company</h2>
@@ -48,24 +48,34 @@
                 <h2>Send Us a Message</h2>
                 <form action="#" method="post">
                     <label for="fullname">Name:</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Placeholder" required>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your Name" required>
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Placeholder" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
 
                     <fieldset>
                         <legend>Message Purpose</legend>
-                        <label><input type="radio" name="purpose" value="general" required> General Inquiry</label><br>
-                        <label><input type="radio" name="purpose" value="reservation"> Reservation Question</label><br>
-                        <label><input type="radio" name="purpose" value="suggestion"> Website Suggestion</label>
+                        <label for="general">
+                            <input type="radio" id="general" name="purpose" value="general" required>
+                            General Inquiry
+                        </label><br>
+                        <label for="reservation">
+                            <input type="radio" id="reservation" name="purpose" value="reservation">
+                            Reservation Question
+                        </label><br>
+                        <label for="suggestion">
+                            <input type="radio" id="suggestion" name="purpose" value="suggestion">
+                            Website Suggestion
+                        </label>
                     </fieldset>
 
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Type here..." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message..."
+                        required></textarea>
 
-                    <label>
-                        <input type="checkbox" name="subscribe">
-                        Please Subscribe me to the monthly newsletter
+                    <label for="subscribe">
+                        <input type="checkbox" id="subscribe" name="subscribe">
+                        Please subscribe me to the monthly newsletter
                     </label>
 
                     <button type="submit">Get in Touch!</button>
@@ -97,12 +107,15 @@
     <footer>
         <p>&copy; 2025 WWR Rafting | Britney Thandeka Maulana</p>
         <nav class="socialmedia">
-            <a href="https://facebook.com" target="_blank" rel="noopener"><img src="images/facebook-icon.png"
-                    alt="Facebook" width="32" /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener"><img src="images/twitter-icon.png"
-                    alt="Twitter" width="32" /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener"><img src="images/instagram-icon.png"
-                    alt="Instagram" width="32" /></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener">
+                <img src="images/facebook-icon.png" alt="Facebook icon" width="32" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener">
+                <img src="images/twitter-icon.png" alt="Twitter icon" width="32" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener">
+                <img src="images/instagram-icon.png" alt="Instagram icon" width="32" />
+            </a>
         </nav>
     </footer>
 </body>
